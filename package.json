@@ -1,0 +1,13 @@
+{
+  "name": "warframe-interface",
+  "private": true,
+  "engines": {
+    "node": ">=18.16.0",
+    "pnpm": ">=8.3.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kauê Fraga Rodrigues <kauefragarodrigues456@gmail.com>",
+  "license": "GPL-3.0"
+}
