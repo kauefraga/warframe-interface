@@ -1,0 +1,9 @@
+{
+  "name": "@warframe-interface/api",
+  "private": true,
+  "author": "Kauê Fraga Rodrigues <kauefragarodrigues456@gmail.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}
