@@ -9,5 +9,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kauê Fraga Rodrigues <kauefragarodrigues456@gmail.com>",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "^2.25.2"
+  }
 }
