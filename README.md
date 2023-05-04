@@ -27,9 +27,14 @@
   </p>
 </div>
 
-## ✨ Features
+> I was searching for something to do and discovered the Warframe Worldstate API,
+therefore i decided to give it a try. Chose Node because i know the ecosystem
+better (npm) than Python's one. Also, i want to create some static site with [Astro](https://astro.build) and it's the opportunity to.
 
-- **Monorepo**: All source code in a single project.
+### Features
+
+- All source code stored in a single project (monorepo).
+- Typescript developer experience is something.
 
 ## 📦 Packages (pnpm workspace)
 
@@ -43,6 +48,9 @@ To run this project you will need to have [Node](https://nodejs.org/en).
 
 ## ⬇️ How to install and use it
 
+1. Clone the repository and enter in it
+2. Install all the dependencies
+3. Select some of the packages above and read the documentation
 
 ```bash
 git clone https://github.com/kauefraga/warframe-interface.git
@@ -56,6 +64,7 @@ You are welcome to open issues and pull requests!
 
 The following tools have been used to build the whole project:
 
+- [Warframe Worldstate](https://docs.warframestat.us) - An API that provides "everything about Warframe".
 - [Node](https://nodejs.org/en) - A runtime based on V8 JavaScript.
 - [Eslint](https://npm.im/eslint-config-airbnb-typescript) - Code ruler/styler with Airbnb style guide.
 - [Typescript](https://typescriptlang.org), [tsx](https://www.npmjs.com/package/tsx) and [tsup](https://www.npmjs.com/package/tsup) - Improve the DX by adding type safety and a blazingly fast execution/build provided by esbuild.
