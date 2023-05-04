@@ -1,16 +1,36 @@
 {
   "name": "@warframe-interface/cli",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "🎮 Faster and easy to understand Warframe information",
+  "main": "dist/bin.js",
+  "bin": {
+    "@kauefraga/warframe-cli": "./dist/bin.js",
+    "warframe-cli": "./dist/bin.js",
+    "wfc": "./dist/bin.js"
   },
-  "keywords": [],
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "cli",
+    "warframe",
+    "typescript",
+    "nodejs"
+  ],
+  "scripts": {
+    "prepublishOnly": "tsup src/",
+    "build": "tsup src/",
+    "start": "node .",
+    "dev": "tsx src/bin.ts",
+    "lint": "eslint --ext .ts,.spec.ts"
+  },
   "author": "Kauê Fraga Rodrigues <kauefragarodrigues456@gmail.com>",
   "license": "GPL-3.0",
   "dependencies": {
-    "@warframe-interface/api": "workspace:*"
+    "@warframe-interface/api": "workspace:*",
+    "ansi-colors": "^4.1.3",
+    "enquirer": "^2.3.6",
+    "nanospinner": "^1.1.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.13.0",
