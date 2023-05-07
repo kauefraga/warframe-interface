@@ -7,33 +7,27 @@ import {
 } from '@warframe-interface/api';
 
 export async function main() {
-  const platformPrompt = await prompt({
+  const { platform } = await prompt<{ platform: string }>({
     type: 'select',
     name: 'platform',
     message: 'Enter the platform you play',
     choices: ['pc', 'ps4', 'xb1', 'swi'],
   })
-    .then((res) => JSON.stringify(res))
     .catch(() => {
       throw new Error(c.bold.red('Prompt canceled!'));
     });
 
-  const { platform } = JSON.parse(platformPrompt);
-
   const warframeRoutes = new WarframeRoutes(platform);
 
-  const answer = await prompt({
+  const { route } = await prompt<{ route: string }>({
     type: 'select',
     name: 'route',
     message: 'What information do you want',
     choices: warframeRoutes.routesNames,
   })
-    .then((res) => JSON.stringify(res))
     .catch(() => {
       throw new Error(c.bold.red('Prompt canceled!'));
     });
-
-  const { route } = JSON.parse(answer);
 
   const spinner = createSpinner('Fetching...');
 
