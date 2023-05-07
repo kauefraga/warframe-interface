@@ -1,10 +1,7 @@
 import { prompt } from 'enquirer';
 import c from 'ansi-colors';
 import { createSpinner } from 'nanospinner';
-import {
-  api,
-  WarframeRoutes,
-} from '@warframe-interface/api';
+import { WarframeInterface } from '@warframe-interface/api';
 
 export async function main() {
   const { platform } = await prompt<{ platform: string }>({
@@ -17,21 +14,21 @@ export async function main() {
       throw new Error(c.bold.red('Prompt canceled!'));
     });
 
-  const warframeRoutes = new WarframeRoutes(platform);
+  const warframeInterface = new WarframeInterface(platform);
 
   const { route } = await prompt<{ route: string }>({
     type: 'select',
     name: 'route',
     message: 'What information do you want',
-    choices: warframeRoutes.routesNames,
+    choices: warframeInterface.routesNames,
   })
     .catch(() => {
       throw new Error(c.bold.red('Prompt canceled!'));
     });
 
-  const spinner = createSpinner('Fetching...');
+  const spinner = createSpinner(c.yellow('Fetching...'));
 
-  await api.get(warframeRoutes.getRoute(route))
+  await warframeInterface.fetch(route)
     .then((response) => {
       spinner.success();
       console.log(response.data);
